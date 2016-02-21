@@ -22,4 +22,15 @@ public class LambdaExercisesTest {
 		assertEquals("List not as expected", expectedList, actualList);
 	}
 
+	@Test
+	public void testSortByLengthDesc() {
+		
+		final List<String> originalList = Arrays.asList("a", "ab", "abc");
+		final List<String> expectedList = Arrays.asList("abc", "ab", "a");
+		
+		List<String> actualList = LambdaExercises.sortByLengthDesc(originalList);
+		
+		assertEquals("List not as expected", expectedList, actualList);
+	}
+
 }
