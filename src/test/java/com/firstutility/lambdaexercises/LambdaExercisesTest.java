@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class LambdaExercisesTest {
 	
-	private LambdaExercises LambdaExercises = new LambdaExercises();
+	private LambdaExercises lambdaExercises = new LambdaExercises();
 
 	@Test
 	public void testSortByLength() {
@@ -17,7 +17,7 @@ public class LambdaExercisesTest {
 		final List<String> originalList = Arrays.asList("abc", "ab", "a");
 		final List<String> expectedList = Arrays.asList("a", "ab", "abc");
 		
-		List<String> actualList = LambdaExercises.sortByLength(originalList);
+		List<String> actualList = lambdaExercises.sortByLength(originalList);
 		
 		assertEquals("List not as expected", expectedList, actualList);
 	}
@@ -28,9 +28,51 @@ public class LambdaExercisesTest {
 		final List<String> originalList = Arrays.asList("a", "ab", "abc");
 		final List<String> expectedList = Arrays.asList("abc", "ab", "a");
 		
-		List<String> actualList = LambdaExercises.sortByLengthDesc(originalList);
+		List<String> actualList = lambdaExercises.sortByLengthDesc(originalList);
 		
 		assertEquals("List not as expected", expectedList, actualList);
+	}
+
+	@Test
+	public void testSortByFirstChar() {
+		
+		final List<String> originalList = Arrays.asList("cba", "ba", "a");
+		final List<String> expectedList = Arrays.asList("a", "ba", "cba");
+		
+		List<String> actualList = lambdaExercises.sortByFirstChar(originalList);
+		
+		assertEquals("List not as expected", expectedList, actualList);
+	}
+
+	@Test
+	public void testSortByContainsE() {
+		
+		final List<String> originalList = Arrays.asList("cba", "eba", "a");
+		final List<String> expectedList = Arrays.asList("eba", "cba", "a");
+		
+		List<String> actualList = lambdaExercises.sortByContainsE(originalList);
+		
+		assertEquals("List not as expected", expectedList, actualList);
+	}
+	
+	@Test
+	public void testBetterStringWithTrue() {
+		assertEquals("a", lambdaExercises.betterString("a", "b", (s1, s2) -> true));
+	}
+
+	@Test
+	public void testBetterStringWithFalse() {
+		assertEquals("b", lambdaExercises.betterString("a", "b", (s1, s2) -> false));
+	}
+
+	@Test
+	public void testBetterStringWithComparatorGreaterLength() {
+		assertEquals("bc", lambdaExercises.betterString("a", "bc", (s1, s2) -> s1.length() > s2.length()));
+	}
+
+	@Test
+	public void testBetterStringWithComparatorShortestLength() {
+		assertEquals("a", lambdaExercises.betterString("a", "bc", (s1, s2) -> s1.length() < s2.length()));
 	}
 
 }

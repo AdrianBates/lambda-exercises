@@ -14,4 +14,29 @@ public class LambdaExercises {
 		return originalList;
 	}
 
+	public List<String> sortByFirstChar(List<String> originalList) {
+		originalList.sort((s1, s2) -> s1.charAt(0) - s2.charAt(0));
+		return originalList;
+	}
+
+	public List<String> sortByContainsE(List<String> originalList) {
+		originalList.sort((s1, s2) -> {
+			if (s1.contains("e") && !s2.contains("e")) {
+				return -1;
+			} else if (s2.contains("e") && !s1.contains("e")) {
+				return 1;
+			}
+			return 0;
+		});
+		return originalList;
+	}
+	
+	public String betterString(String s1, String s2, BetterString betterString) {
+		if (betterString.isBetter(s1, s2)) {
+			return s1;
+		} else {
+			return s2;
+		}
+	}
+
 }
