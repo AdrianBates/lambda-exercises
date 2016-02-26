@@ -17,7 +17,7 @@ public class LambdaExercisesTest {
 		final List<String> originalList = Arrays.asList("abc", "ab", "a");
 		final List<String> expectedList = Arrays.asList("a", "ab", "abc");
 		
-		List<String> actualList = lambdaExercises.sortByLength(originalList);
+		final List<String> actualList = lambdaExercises.sortByLength(originalList);
 		
 		assertEquals("List not as expected", expectedList, actualList);
 	}
@@ -28,7 +28,7 @@ public class LambdaExercisesTest {
 		final List<String> originalList = Arrays.asList("a", "ab", "abc");
 		final List<String> expectedList = Arrays.asList("abc", "ab", "a");
 		
-		List<String> actualList = lambdaExercises.sortByLengthDesc(originalList);
+		final List<String> actualList = lambdaExercises.sortByLengthDesc(originalList);
 		
 		assertEquals("List not as expected", expectedList, actualList);
 	}
@@ -39,7 +39,7 @@ public class LambdaExercisesTest {
 		final List<String> originalList = Arrays.asList("cba", "ba", "a");
 		final List<String> expectedList = Arrays.asList("a", "ba", "cba");
 		
-		List<String> actualList = lambdaExercises.sortByFirstChar(originalList);
+		final List<String> actualList = lambdaExercises.sortByFirstChar(originalList);
 		
 		assertEquals("List not as expected", expectedList, actualList);
 	}
@@ -50,7 +50,7 @@ public class LambdaExercisesTest {
 		final List<String> originalList = Arrays.asList("cba", "eba", "a");
 		final List<String> expectedList = Arrays.asList("eba", "cba", "a");
 		
-		List<String> actualList = lambdaExercises.sortByContainsE(originalList);
+		final List<String> actualList = lambdaExercises.sortByContainsE(originalList);
 		
 		assertEquals("List not as expected", expectedList, actualList);
 	}
