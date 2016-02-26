@@ -31,8 +31,8 @@ public class LambdaExercises {
 		return originalList;
 	}
 
-	public String betterString(String s1, String s2, BetterString betterString) {
-		if (betterString.isBetter(s1, s2)) {
+	public String betterString(String s1, String s2, StringPredicate stringPredicate) {
+		if (stringPredicate.isBetter(s1, s2)) {
 			return s1;
 		} else {
 			return s2;

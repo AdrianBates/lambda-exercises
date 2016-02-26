@@ -1,6 +1,6 @@
 package com.firstutility.lambdaexercises;
 
-public interface BetterString {
+public interface StringPredicate {
 	
 	boolean isBetter(String s1, String s2);
 
