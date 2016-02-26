@@ -30,13 +30,20 @@ public class LambdaExercises {
 		});
 		return originalList;
 	}
-	
+
 	public String betterString(String s1, String s2, BetterString betterString) {
 		if (betterString.isBetter(s1, s2)) {
 			return s1;
 		} else {
 			return s2;
 		}
+	}
+
+	public <T> T betterElement(T t1, T t2, TwoElementPredicate<T> predicate) {
+		if (predicate.isBetter(t1, t2)) {
+			return t1;
+		}
+		return t2;
 	}
 
 }

@@ -75,4 +75,25 @@ public class LambdaExercisesTest {
 		assertEquals("a", lambdaExercises.betterString("a", "bc", (s1, s2) -> s1.length() < s2.length()));
 	}
 
+	@Test
+	public void testBetterElementWithTrue() {
+		assertEquals("a", lambdaExercises.betterElement("a", "b", (s1, s2) -> true));
+	}
+
+	@Test
+	public void testBetterElementWithFalse() {
+		assertEquals("b", lambdaExercises.betterElement("a", "b", (s1, s2) -> false));
+	}
+
+	@Test
+	public void testBetterElementWithIntegers() {
+		assertEquals(new Integer(1), lambdaExercises.betterElement(new Integer(1), new Integer(2), (i1, i2) -> true));
+	}
+
+	@Test
+	public void testBetterElementWithIntegersGreater() {
+		Integer.valueOf(2).intValue();
+		assertEquals(new Integer(2), lambdaExercises.betterElement(new Integer(1), new Integer(2), (i1, i2) -> i1.intValue() > i2.intValue()));
+	}
+
 }
