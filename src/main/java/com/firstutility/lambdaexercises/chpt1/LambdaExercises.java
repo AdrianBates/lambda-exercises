@@ -1,4 +1,4 @@
-package com.firstutility.lambdaexercises;
+package com.firstutility.lambdaexercises.chpt1;
 
 import java.util.List;
 

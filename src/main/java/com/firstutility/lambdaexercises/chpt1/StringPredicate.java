@@ -1,4 +1,4 @@
-package com.firstutility.lambdaexercises;
+package com.firstutility.lambdaexercises.chpt1;
 
 public interface StringPredicate {
 	
