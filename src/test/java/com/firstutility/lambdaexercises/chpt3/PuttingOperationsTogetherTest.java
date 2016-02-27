@@ -13,11 +13,12 @@ import com.firstutility.lambdaexercises.domain.Album;
 
 public class PuttingOperationsTogetherTest {
 
+	private PuttingOperationsTogether puttingOperationsTogether = new PuttingOperationsTogether();
+
 	@Test
 	public void testGetAlbumsNationalities() {
-		final Album album = anAlbum().musicians(anArtist().isABand().origin("Liverpool")).build();
 
-		final PuttingOperationsTogether puttingOperationsTogether = new PuttingOperationsTogether();
+		final Album album = anAlbum().musicians(anArtist().isABand().origin("Liverpool")).build();
 
 		final List<String> actual = puttingOperationsTogether.getAlbumsNationalities(album);
 
@@ -26,10 +27,9 @@ public class PuttingOperationsTogetherTest {
 
 	@Test
 	public void testGetAlbumsNationalitiesWith2Nationalities() {
+
 		final Album album = anAlbum().musicians(anArtist().isABand().origin("Liverpool"),
 				anArtist().isABand().origin("Brighton")).build();
-
-		final PuttingOperationsTogether puttingOperationsTogether = new PuttingOperationsTogether();
 
 		final List<String> actual = puttingOperationsTogether.getAlbumsNationalities(album);
 
@@ -38,10 +38,9 @@ public class PuttingOperationsTogetherTest {
 
 	@Test
 	public void testGetAlbumsNationalitiesWith2NationalitiesOneNoThe() {
+
 		final Album album = anAlbum().musicians(anArtist().isABand().origin("Liverpool"),
 				anArtist().isNotABand().origin("Brighton")).build();
-
-		final PuttingOperationsTogether puttingOperationsTogether = new PuttingOperationsTogether();
 
 		final List<String> actual = puttingOperationsTogether.getAlbumsNationalities(album);
 
