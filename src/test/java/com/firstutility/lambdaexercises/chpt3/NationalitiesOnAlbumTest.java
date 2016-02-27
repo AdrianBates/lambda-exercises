@@ -11,16 +11,16 @@ import org.junit.Test;
 
 import com.firstutility.lambdaexercises.domain.Album;
 
-public class PuttingOperationsTogetherTest {
+public class NationalitiesOnAlbumTest {
 
-	private PuttingOperationsTogether puttingOperationsTogether = new PuttingOperationsTogether();
+	private NationalitiesOnAlbum nationalitiesOnAlbum = new NationalitiesOnAlbum();
 
 	@Test
 	public void testGetAlbumsNationalities() {
 
 		final Album album = anAlbum().musicians(anArtist().isABand().origin("Liverpool")).build();
 
-		final List<String> actual = puttingOperationsTogether.getAlbumsNationalities(album);
+		final List<String> actual = nationalitiesOnAlbum.getAlbumsNationalities(album);
 
 		assertEquals(asList("Liverpool"), actual);
 	}
@@ -31,7 +31,7 @@ public class PuttingOperationsTogetherTest {
 		final Album album = anAlbum().musicians(anArtist().isABand().origin("Liverpool"),
 				anArtist().isABand().origin("Brighton")).build();
 
-		final List<String> actual = puttingOperationsTogether.getAlbumsNationalities(album);
+		final List<String> actual = nationalitiesOnAlbum.getAlbumsNationalities(album);
 
 		assertEquals(asList("Liverpool", "Brighton"), actual);
 	}
@@ -42,7 +42,7 @@ public class PuttingOperationsTogetherTest {
 		final Album album = anAlbum().musicians(anArtist().isABand().origin("Liverpool"),
 				anArtist().isNotABand().origin("Brighton")).build();
 
-		final List<String> actual = puttingOperationsTogether.getAlbumsNationalities(album);
+		final List<String> actual = nationalitiesOnAlbum.getAlbumsNationalities(album);
 
 		assertEquals(asList("Liverpool"), actual);
 	}

@@ -18,8 +18,10 @@ public class AlbumBuilder {
 		return this;
 	}
 
-	public AlbumBuilder tracks(List<Track> tracks) {
-		this.tracks = tracks;
+	public AlbumBuilder tracks(TrackBuilder... tracks) {
+		for (TrackBuilder builder: tracks) {
+			this.tracks.add(builder.build());
+		}
 		return this;
 	}
 

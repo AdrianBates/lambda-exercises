@@ -1,7 +1,5 @@
 package com.firstutility.lambdaexercises.domain;
 
-import static java.util.Arrays.asList;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
@@ -27,8 +25,8 @@ public class Album {
 		this.name = name;
 	}
 
-	public List<Track> getTracks() {
-		return tracks;
+	public Stream<Track> getTracks() {
+		return tracks.stream();
 	}
 
 	public void setTracks(List<Track> tracks) {
