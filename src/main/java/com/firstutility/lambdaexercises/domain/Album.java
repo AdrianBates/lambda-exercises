@@ -41,6 +41,11 @@ public class Album {
 		this.musicians = musicians;
 	}
 
+	public int getLength() {
+		// return getTracks().mapToInt(Track::getLength).sum();
+		return getTracks().map(Track::getLength).reduce(0, (a, b) -> a + b);
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
